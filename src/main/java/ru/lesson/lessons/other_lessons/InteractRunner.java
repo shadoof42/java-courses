@@ -1,3 +1,5 @@
+package ru.lesson.lessons.other_lessons;
+
 import java.util.Scanner;
 /**
 	Класс для запуска калькулятора. Поддерживает ввод пользователя.
@@ -32,25 +34,24 @@ public class InteractRunner{
 	*/
 	private void perform(final int next,final String action){
 		//System.out.println("Action:" + action);
-		switch(action){
-			case "+":
-				calc.add(next);		
-				break;
-			case "-":
-				calc.sub(next);
-				break;
-			case "*":
-				calc.mult(next);
-				break;
-			case "/":
-				calc.div(next);
-				break;
-			case "clear":
-				calc.clearResult();
-				break;
-			default:
-				System.out.println("No such operation! Please try again))))");
-				break;
+		if (action.equals("+")) {
+			calc.add(next);
+
+		} else if (action.equals("-")) {
+			calc.sub(next);
+
+		} else if (action.equals("*")) {
+			calc.mult(next);
+
+		} else if (action.equals("/")) {
+			calc.div(next);
+
+		} else if (action.equals("clear")) {
+			calc.clearResult();
+
+		} else {
+			System.out.println("No such operation! Please try again))))");
+
 		}
 	}	
 	/**
@@ -69,7 +70,7 @@ public class InteractRunner{
 		if (!params[1].equals("clear")){
 			System.out.println("Enter second arg : ");
 			params[2] = reader.next();
-		}
+		}else params[2]="0";
 		return params;
 	}
 	

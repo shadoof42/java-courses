@@ -1,4 +1,5 @@
-import java.lang.Math.*;
+package ru.lesson.lessons.other_lessons;
+
 public class Calculate{
 	public static void main (String... arg){
 		System.out.println("Calculate...");
